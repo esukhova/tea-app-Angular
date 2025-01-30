@@ -1,0 +1,33 @@
+.popup {
+  opacity: 0;
+  border: 1px solid rgba(0, 0, 0, 0.176);
+  pointer-events: none;
+  position: fixed;
+  border-radius: 50%;
+  width: 230px;
+  aspect-ratio: 1;
+  top: unset;
+  bottom: 50px;
+  left: unset;
+  right: 50px;
+  background: white;
+  z-index: 1000;
+
+  &.show {
+    opacity: 1;
+    pointer-events: unset;
+  }
+
+  @media (max-width: 768px) {
+    border-radius: 8px;
+    bottom: 20px;
+    right: 50%;
+    transform: translate(50%, 0);
+    aspect-ratio: unset;
+  }
+}
+
+span {
+  display: inline-block;
+}
+

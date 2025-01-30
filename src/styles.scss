@@ -1,1 +1,87 @@
-/* You can add global styles to this file, and also import other style files */
+app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main-component, product-component, order-component, catalog-component {
+  flex: 1 0 auto;
+}
+
+input.ng-invalid.ng-dirty,
+input.ng-invalid.ng-touched {
+  border-color: #d32828;
+}
+
+.invalid-feedback {
+  display: block;
+  color: #d32828;
+}
+
+.show {
+  opacity: 1;
+  pointer-events: unset;
+}
+
+/*---accordion------------------------------------------------------------------------*/
+
+.ui-state-active .ui-icon, .ui-button:active .ui-icon {
+  background-image: url("/assets/images/icons/arrow.svg");
+  transform: rotate(180deg);
+  transition: all 0.3s;
+  position: absolute;
+  right: 10px;
+}
+
+.ui-icon, .ui-widget-content .ui-icon {
+  background-image: url("/assets/images/icons/arrow.svg");
+  position: absolute;
+  right: 10px;
+}
+
+.ui-state-hover .ui-icon, .ui-state-focus .ui-icon, .ui-button:hover .ui-icon, .ui-button:focus .ui-icon {
+  background-image: url("/assets/images/icons/arrow.svg");
+  position: absolute;
+  right: 10px;
+}
+
+.ui-icon-circle-arrow-e {
+  background-position: 0 0;
+}
+
+.ui-icon-circle-arrow-s {
+  background-position: 0 0;
+}
+
+.ui-widget-content {
+  border: none;
+}
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-button:hover, .ui-button:focus {
+  border: 1px solid #ccc;
+  background: linear-gradient(#076BFF, #007BFF);
+  font-weight: bold;
+  color: #fff;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+  border: 1px solid #003eff;
+  background: linear-gradient(#076BFF, #007BFF);
+  font-weight: bold;
+  color: #fff;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+  border: 1px solid #c5c5c5;
+  background: linear-gradient(#076BFF, #007BFF);
+  font-weight: bold;
+  color: #fff;
+}
+
+.ui-accordion .ui-accordion-content {
+  padding: 23px;
+}
+
+.ui-accordion-content.ui-corner-bottom.ui-helper-reset.ui-widget-content {
+  overflow: hidden;
+}

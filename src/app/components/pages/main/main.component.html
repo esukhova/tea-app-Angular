@@ -1,0 +1,78 @@
+<section class="slides py-lg-4 animate__fadeInDown">
+  <div class="container p-0">
+    <div class="slider">
+      <div class="slider__item position-relative">
+        <img src="/assets/images/slider1.png" alt="" class="w-100 d-none d-md-block">
+        <img src="/assets/images/slider1_1.png" alt="" class="w-100 d-block d-md-none">
+        <div
+          class="slider__content offset-0 offset-sm-1 px-5 px-sm-0 py-4 py-lg-0 d-flex flex-column z-2 position-absolute top-0 start-0 justify-content-lg-center justify-content-between h-100">
+          <h2 class="display-5 fw-bold mb-lg-4">Скидки на травяные чаи</h2>
+          <div>
+          <span class="fs-5 my-lg-5 my-3 bg-light bg-opacity-75 rounded-2 p-3">Посмотрите наши чайные
+            коллекции</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="answers pt-5 pb-4">
+  <div class="container px-3">
+    <h2 class="title fs-2 fw-bold text-center mb-5">Ответы на часто задаваемые вопросы</h2>
+    <div class="row">
+      <div class="col-lg-8 my-0 mx-auto">
+        <div id="accordion">
+          <h3 class="rounded-3 ps-2 pe-5 py-3 ps-sm-4 py-sm-4 border-0 d-flex align-items-center position-relative">
+            Собираете ли вы подарочные боксы?</h3>
+          <div>
+            <p>
+              Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и
+              стоимость!
+            </p>
+          </div>
+          <h3
+            class="rounded-3 ps-2 pe-5 py-3 ps-sm-4 py-sm-4 m-0 mt-3 border-0 d-flex align-items-center position-relative">
+            Сколько у вас разновидностей чая?</h3>
+          <div>
+            <p>
+              У нас в ассортименте 120 видов чая из более чем 30 стран мира!
+            </p>
+          </div>
+          <h3
+            class="rounded-3 ps-2 pe-5 py-3 ps-sm-4 py-sm-4 m-0 mt-3 border-0 d-flex align-items-center position-relative">
+            В какой срок осуществляется доставка?</h3>
+          <div>
+            <p>
+              Доставка по Санкт-Петербургу и Ленинградской области осущестляется в течение 1 суток, для
+              других
+              городов России - в срок до 5 суток.
+            </p>
+          </div>
+          <h3
+            class="rounded-3 ps-2 pe-5 py-3 ps-sm-4 py-sm-4 m-0 mt-3 border-0 d-flex align-items-center position-relative">
+            У вас обновляется ассортимент?</h3>
+          <div>
+            <p>
+              Наш ассортимент обновляется каждый сезон!
+            </p>
+          </div>
+          <h3
+            class="rounded-3 ps-2 pe-5 py-3 ps-sm-4 py-sm-4 m-0 mt-3 border-0 d-flex align-items-center position-relative">
+            Какого объема у вас пачки чая?</h3>
+          <div>
+            <p>
+              В ассортименте пачки по 100, 200, 500 и 1000г.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div id="popup" [class.show]="popupShow"
+     class="popup fade d-flex flex-column text-center align-items-center justify-content-center p-4">
+  <button type="button" class="btn-close pe-3" (click)="popupClose()"></button>
+  <p class="p-1 my-2">Посмотрите наши чайные коллекции</p>
+  <a routerLink="/catalog" class="btn btn-primary w-75 align-self-center">Смотреть</a>
+</div>
+

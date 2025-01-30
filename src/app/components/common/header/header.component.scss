@@ -1,0 +1,27 @@
+/*---navbar------------------------------------------------------------------------*/
+
+.form-control {
+  border-radius: var(--bs-border-radius-sm);
+}
+
+.navbar:has(.navbar-collapse.collapse.show) {
+  padding-top: 30px;
+  z-index: 100;
+}
+
+.container-fluid:has(.navbar-collapse.collapse.show) {
+  padding-bottom: 10px;
+}
+
+.btn-close {
+  opacity: 0;
+  pointer-events: none;
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.btn-close.show {
+  opacity: 1;
+  pointer-events: unset;
+}

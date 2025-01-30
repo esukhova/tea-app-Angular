@@ -1,0 +1,100 @@
+<div class="order">
+  <div class="container py-3">
+    <div class="row">
+      <div class="col-lg-6 my-0 mx-auto">
+        <h2 class="title fs-2 fw-bold text-center mb-5">Сделать заказ</h2>
+        <div class="p-2 text-center fs-1" [style.display]="status === 1 ? 'block' : 'none'">Спасибо за заказ!</div>
+        <form [formGroup]="orderForm" action="#" class="p-0" [style.display]="status === 1 ? 'none' : 'block'">
+          <div class="row w-100 m-0 p-0">
+            <div class="col-12 d-flex flex-column p-0">
+              <label for="product" class="form-label mt-3">Товар</label>
+              <input type="text" id="product" class="rounded-1 form-control" formControlName="product" [attr.disabled]="true">
+            </div>
+            <div class="col-12 col-md-4 d-flex flex-column p-0 pe-md-4">
+              <label for="name" class="form-label mt-3">Имя</label>
+              <input type="text" id="name" class="rounded-1 form-control" formControlName="name">
+
+              <div class="invalid-feedback"
+                   *ngIf="name?.invalid && (name?.touched || name?.dirty)">
+                <div *ngIf="name?.errors?.['required']">
+                  Требуется указать имя.
+                </div>
+                <div *ngIf="name?.errors?.['pattern']">
+                  Имя может содержать только буквы.
+                </div>
+              </div>
+
+            </div>
+            <div class="col-12 col-md-4 d-flex flex-column p-0 pe-md-4">
+              <label for="surname" class="form-label mt-3">Фамилия</label>
+              <input type="text" id="surname" class="rounded-1 form-control" formControlName="last_name">
+
+              <div class="invalid-feedback"
+                   *ngIf="lastName?.invalid && (lastName?.touched || lastName?.dirty)">
+                <div *ngIf="lastName?.errors?.['required']">
+                  Требуется указать фамилию.
+                </div>
+                <div *ngIf="lastName?.errors?.['pattern']">
+                  Фамилия может содержать только буквы.
+                </div>
+              </div>
+
+            </div>
+            <div class="col-12 col-md-4 d-flex flex-column p-0">
+              <label for="tel" class="form-label mt-3">Телефон</label>
+              <input type="tel" id="tel" class="rounded-1 form-control" formControlName="phone">
+
+              <div class="invalid-feedback"
+                   *ngIf="phone?.invalid && (phone?.touched || phone?.dirty)">
+                <div *ngIf="phone?.errors?.['required']">
+                  Требуется указать телефон.
+                </div>
+                <div *ngIf="phone?.errors?.['pattern']">
+                  Телефон должен содержать 11 цифр, допустим знак "+".
+                </div>
+              </div>
+
+            </div>
+            <div class="col-12 col-md-6 d-flex flex-column p-0 pe-md-4">
+              <label for="country" class="form-label mt-3">Страна</label>
+              <input type="text" id="country" class="rounded-1 form-control" formControlName="country">
+            </div>
+            <div class="col-12 col-md-6 d-flex flex-column p-0">
+              <label for="index" class="form-label mt-3">Индекс</label>
+              <input type="text" id="index" class="rounded-1 form-control" formControlName="zip">
+              <div class="invalid-feedback"
+                   *ngIf="zip?.invalid && (zip?.touched || zip?.dirty) && zip?.errors?.['required']">
+                  Требуется указать индекс.
+              </div>
+            </div>
+            <div class="col-12 d-flex flex-column p-0">
+              <label for="address" class="form-label mt-3">Адрес</label>
+              <input type="text" id="address" class="rounded-1 form-control" formControlName="address">
+
+              <div class="invalid-feedback"
+                   *ngIf="address?.invalid && (address?.touched || address?.dirty)">
+                <div *ngIf="address?.errors?.['required']">
+                  Требуется указать адрес.
+                </div>
+                <div *ngIf="address?.errors?.['pattern']">
+                  Укажите корректный адрес
+                </div>
+              </div>
+
+            </div>
+            <div class="col-12 d-flex flex-column p-0">
+              <label for="comment" class="form-label mt-3">Комментарий к заказу</label>
+              <input type="text" id="comment" class="rounded-1 form-control" formControlName="comment">
+            </div>
+            <div class="col-12 d-flex p-0 mt-4 align-items-center">
+              <button type="button" class="btn btn-primary px-4 hvr-sink" (click)="createOrder()" [disabled]="status === 3">
+                Отправить
+              </button>
+              <div class="px-2 invalid-feedback mt-0" [style.display]="status === 2 ? 'block' : 'none'">Произошла ошибка. Попробуйте еще раз.</div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

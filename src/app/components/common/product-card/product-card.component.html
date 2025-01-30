@@ -1,0 +1,12 @@
+<div class="col">
+  <div class="card text-black rounded-1 h-100">
+    <a routerLink="{{product.image}}" class="image-popup-no-margins" title="{{product.title}}">
+      <img src="{{product.image}}" class="card-img-top" alt="{{product.title}}">
+    </a>
+    <div class="card-body px-4 py-3">
+      <h5 class="card-title fw-bold mb-3">{{product.title}}</h5>
+      <p class="card-text mb-4">{{product.description | textCut: 65}}</p>
+      <a [routerLink]="['/catalog', product.id]" class="col btn btn-primary px-5 hvr-sink">Подробнее</a>
+    </div>
+  </div>
+</div>
