@@ -16,7 +16,7 @@ main-component, product-component, order-component, catalog-component {
 /*---accordion------------------------------------------------------------------------*/
 
 .ui-state-active .ui-icon, .ui-button:active .ui-icon {
-  background-image: url("/assets/images/icons/arrow.svg");
+  background-image: url("assets/images/icons/arrow.svg");
   transform: rotate(180deg);
   transition: all 0.3s;
   position: absolute;
@@ -24,13 +24,13 @@ main-component, product-component, order-component, catalog-component {
 }
 
 .ui-icon, .ui-widget-content .ui-icon {
-  background-image: url("/assets/images/icons/arrow.svg");
+  background-image: url("assets/images/icons/arrow.svg");
   position: absolute;
   right: 10px;
 }
 
 .ui-state-hover .ui-icon, .ui-state-focus .ui-icon, .ui-button:hover .ui-icon, .ui-button:focus .ui-icon {
-  background-image: url("/assets/images/icons/arrow.svg");
+  background-image: url("assets/images/icons/arrow.svg");
   position: absolute;
   right: 10px;
 }
