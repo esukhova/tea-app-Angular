@@ -12,7 +12,7 @@
             </div>
             <div class="col-12 col-md-4 d-flex flex-column p-0 pe-md-4">
               <label for="name" class="form-label mt-3">Имя</label>
-              <input type="text" id="name" class="rounded-1 form-control" formControlName="name">
+              <input type="text" id="name" [class]="'rounded-1 form-control' + (touchedSubmitButton ? ' ng-touched' : '')" formControlName="name">
 
               <div class="invalid-feedback"
                    *ngIf="name?.invalid && (name?.touched || name?.dirty)">
@@ -20,14 +20,14 @@
                   Требуется указать имя.
                 </div>
                 <div *ngIf="name?.errors?.['pattern']">
-                  Имя может содержать только буквы.
+                  Имя может содержать только русские буквы.
                 </div>
               </div>
 
             </div>
             <div class="col-12 col-md-4 d-flex flex-column p-0 pe-md-4">
               <label for="surname" class="form-label mt-3">Фамилия</label>
-              <input type="text" id="surname" class="rounded-1 form-control" formControlName="last_name">
+              <input type="text" id="surname" [class]="'rounded-1 form-control' + (touchedSubmitButton ? ' ng-touched' : '')" formControlName="last_name">
 
               <div class="invalid-feedback"
                    *ngIf="lastName?.invalid && (lastName?.touched || lastName?.dirty)">
@@ -35,14 +35,14 @@
                   Требуется указать фамилию.
                 </div>
                 <div *ngIf="lastName?.errors?.['pattern']">
-                  Фамилия может содержать только буквы.
+                  Фамилия может содержать только русские буквы.
                 </div>
               </div>
 
             </div>
             <div class="col-12 col-md-4 d-flex flex-column p-0">
               <label for="tel" class="form-label mt-3">Телефон</label>
-              <input type="tel" id="tel" class="rounded-1 form-control" formControlName="phone">
+              <input type="tel" id="tel" [class]="'rounded-1 form-control' + (touchedSubmitButton ? ' ng-touched' : '')" formControlName="phone">
 
               <div class="invalid-feedback"
                    *ngIf="phone?.invalid && (phone?.touched || phone?.dirty)">
@@ -57,11 +57,15 @@
             </div>
             <div class="col-12 col-md-6 d-flex flex-column p-0 pe-md-4">
               <label for="country" class="form-label mt-3">Страна</label>
-              <input type="text" id="country" class="rounded-1 form-control" formControlName="country">
+              <input type="text" id="country" [class]="'rounded-1 form-control' + (touchedSubmitButton ? ' ng-touched' : '')" formControlName="country">
+              <div class="invalid-feedback"
+                   *ngIf="country?.invalid && (country?.touched || country?.dirty) && country?.errors?.['required']">
+                Требуется указать страну.
+              </div>
             </div>
             <div class="col-12 col-md-6 d-flex flex-column p-0">
               <label for="index" class="form-label mt-3">Индекс</label>
-              <input type="text" id="index" class="rounded-1 form-control" formControlName="zip">
+              <input type="text" id="index" [class]="'rounded-1 form-control' + (touchedSubmitButton ? ' ng-touched' : '')" formControlName="zip">
               <div class="invalid-feedback"
                    *ngIf="zip?.invalid && (zip?.touched || zip?.dirty) && zip?.errors?.['required']">
                   Требуется указать индекс.
@@ -69,7 +73,7 @@
             </div>
             <div class="col-12 d-flex flex-column p-0">
               <label for="address" class="form-label mt-3">Адрес</label>
-              <input type="text" id="address" class="rounded-1 form-control" formControlName="address">
+              <input type="text" id="address" [class]="'rounded-1 form-control' + (touchedSubmitButton ? ' ng-touched' : '')" formControlName="address">
 
               <div class="invalid-feedback"
                    *ngIf="address?.invalid && (address?.touched || address?.dirty)">

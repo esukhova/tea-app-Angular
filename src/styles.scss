@@ -8,16 +8,6 @@ main-component, product-component, order-component, catalog-component {
   flex: 1 0 auto;
 }
 
-input.ng-invalid.ng-dirty,
-input.ng-invalid.ng-touched {
-  border-color: #d32828;
-}
-
-.invalid-feedback {
-  display: block;
-  color: #d32828;
-}
-
 .show {
   opacity: 1;
   pointer-events: unset;
@@ -85,3 +75,6 @@ input.ng-invalid.ng-touched {
 .ui-accordion-content.ui-corner-bottom.ui-helper-reset.ui-widget-content {
   overflow: hidden;
 }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

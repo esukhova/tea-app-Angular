@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Subscription} from "rxjs";
 import {FormBuilder, Validators} from "@angular/forms";
-import {OrderService} from "../../../services/order.service";
+import {OrderService} from "../../shared/services/order.service";
 
 declare let $: any;
 
@@ -16,6 +16,7 @@ export class OrderComponent implements OnInit, OnDestroy {
   private productSubscription: Subscription | null = null;
   private orderSubscription: Subscription | null = null;
   status: number = 0;
+  touchedSubmitButton: boolean = false;
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
@@ -81,14 +82,6 @@ export class OrderComponent implements OnInit, OnDestroy {
     this.orderSubscription?.unsubscribe();
   }
 
-  inputs = document.getElementsByTagName('input');
-
-  changeBorders() {
-    for (let i = 0; i < this.inputs.length; i++) {
-      this.inputs[i].classList.add('ng-touched');
-    }
-  }
-
   createOrder() {
     if (this.name?.value && this.lastName?.value && this.phone?.value && this.country?.value && this.zip?.value && this.product?.value && this.address?.value) {
       this.status = 3;
@@ -117,7 +110,7 @@ export class OrderComponent implements OnInit, OnDestroy {
           }
         })
     } else {
-      this.changeBorders();
+      this.touchedSubmitButton = true;
     }
   }
 }

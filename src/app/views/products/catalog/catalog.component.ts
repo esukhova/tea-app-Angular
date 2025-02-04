@@ -1,9 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ProductService} from "../../../services/product.service";
-import {ProductType} from "../../../types/product.type";
+import {ProductService} from "../../../shared/services/product.service";
+import {ProductType} from "../../../../types/product.type";
 import {Router} from "@angular/router";
 import {Observable, Subject, Subscription, tap} from "rxjs";
-import {SearchService} from "../../../services/search.service";
+import {SearchService} from "../../../shared/services/search.service";
 
 declare let $: any;
 

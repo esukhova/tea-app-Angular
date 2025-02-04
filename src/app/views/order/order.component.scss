@@ -1,0 +1,9 @@
+.order input.ng-invalid.ng-dirty,
+.order input.ng-invalid.ng-touched {
+  border-color: #d32828;
+}
+
+.order .invalid-feedback {
+  display: block;
+  color: #d32828;
+}
