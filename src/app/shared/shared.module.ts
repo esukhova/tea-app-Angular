@@ -5,8 +5,7 @@ import {HeaderComponent} from "./components/header/header.component";
 import {ProductCardComponent} from "./components/product-card/product-card.component";
 import {TextCutPipe} from "./pipes/text-cut.pipe";
 import {RouterModule} from "@angular/router";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
