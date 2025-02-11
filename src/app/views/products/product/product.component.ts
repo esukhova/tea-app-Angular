@@ -33,6 +33,7 @@ export class ProductComponent implements OnInit, OnDestroy {
           .subscribe({
             next: (product) => {
               this.product = product;
+              this.product.image = this.product.image.replace('http', 'https');
             },
             error: (error) => {
               console.log(error);
