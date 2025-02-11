@@ -56,10 +56,6 @@ export class CatalogComponent implements OnInit, OnDestroy {
               this.products = products;
               this.status = 2;
               this.inputValue = value;
-
-              this.products.forEach((product) => {
-                product.image = product.image.replace('http', 'https');
-              })
             } else {
               this.products = [];
               this.status = 0;
@@ -72,6 +68,10 @@ export class CatalogComponent implements OnInit, OnDestroy {
               this.status = 0;
             }
           }
+
+          this.products.forEach((product) => {
+            product.image = product.image.replace('http', 'https');
+          })
         },
         error: (error) => {
           console.log(error);
