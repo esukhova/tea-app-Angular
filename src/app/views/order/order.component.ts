@@ -25,11 +25,11 @@ export class OrderComponent implements OnInit, OnDestroy {
   }
 
   orderForm = this.fb.group({
-    name: ['', [Validators.required, Validators.pattern('^[а-яА-Я]+$')]],
-    last_name: ['', [Validators.required, Validators.pattern('^[а-яА-Я]+$')]],
+    name: ['', [Validators.required, Validators.pattern('^[а-яА-ЯёЁ]+(?:[ -][а-яА-ЯёЁ]+)*$')]],
+    last_name: ['', [Validators.required, Validators.pattern('^[а-яА-ЯёЁ]+(?:[ -][а-яА-ЯёЁ]+)*$')]],
     phone: ['', [Validators.required, Validators.pattern('^\\+?[0-9]{11}$')]],
     country: ['', [Validators.required]],
-    zip: ['', [Validators.required]],
+    zip: ['', [Validators.required, Validators.pattern(/^\d{6}$/)]],
     product: [''],
     address: ['', [Validators.required, Validators.pattern('^[а-яА-Я0-9- /]+$')]],
     comment: ['']
@@ -112,5 +112,36 @@ export class OrderComponent implements OnInit, OnDestroy {
     } else {
       this.touchedSubmitButton = true;
     }
+  }
+
+  capitalizeWords(controlName: string):void {
+    const control = this.orderForm.get(controlName);
+    const value = control?.value;
+    if (!value) {
+      return;
+    }
+
+    const capitalized = value.split(' ').map((word: string)=> word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    control?.setValue(capitalized, { emitEvent: false });
+  }
+
+  onlyDigits(controlName: string): void {
+    const control = this.orderForm.get(controlName);
+    control?.setValue((control?.value || '').replace(/\D/g, ''), { emitEvent: false });
+  }
+
+  onlyDigitsAndPlus(controlName: string): void {
+    const control = this.orderForm.get(controlName);
+    if (!control) {
+      return;
+    }
+
+    let value = (control.value || '').replace(/[^\d+]/g, '');
+    if (value.startsWith('+')) {
+      value = '+' + value.slice(1).replace(/\+/g, '');
+    } else {
+      value = value.replace(/\+/g, '');
+    }
+    control.setValue(value, { emitEvent: false });
   }
 }
