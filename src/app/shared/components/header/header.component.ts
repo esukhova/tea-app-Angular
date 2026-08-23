@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {SearchService} from "../../services/search.service";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -12,12 +13,15 @@ export class HeaderComponent implements OnInit {
 
   searchInput = new FormControl('');
 
-  constructor(private searchService: SearchService) { }
+  constructor(private searchService: SearchService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   search() {
-    this.searchService.search(this.searchInput.value ? this.searchInput.value : '');
+    const value = this.searchInput.value?.trim();
+    if (!value) return;
+    this.searchService.search(value);
+    this.router.navigate(['/catalog']);
   }
 }
